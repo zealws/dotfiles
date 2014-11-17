@@ -1,0 +1,6 @@
+[user]
+	email = zealjagannatha@gmail.com
+    name = Zeal Jagannatha
+[alias]
+    d = diff
+    ci = commit

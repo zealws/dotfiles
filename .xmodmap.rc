@@ -1,0 +1,10 @@
+! Original
+!keycode   9 = Escape NoSymbol Escape
+!keycode  66 = Caps_Lock NoSymbol Caps_Lock
+
+! Rebind Caps Lock (keycode 66) to Control_L
+! xcape will make it behave like Escape when it is pressed solo
+! using this command: 'xcape -e 'Control_L=Escape'
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L

@@ -1,7 +1,11 @@
-syntax on
-filetype on
+execute pathogen#infect()
 
-au BufNewFile,BufRead *.go set filetype=go syntax=go
+syntax on
+filetype plugin indent on
+
+" for https://github.com/fatih/vim-go
+au FileType go nmap <leader>f :GoFmt
+au FileType go nmap <leader>b <Plug>(go-test)
 
 set tabstop=4
 set expandtab
