@@ -4,3 +4,5 @@
 [alias]
     d = diff
     ci = commit
+[push]
+	default = simple
