@@ -1,8 +1,2 @@
-export GOPATH="$HOME/go"
+[ -f "$HOME/.agent.rc" ] && . "$HOME/.agent.rc" &>/dev/null
 
-PATH="$GOPATH/bin:$PATH"
-
-export EDITOR=vim
-
-alias lkj='cd go/src/github.com/zfjagann'
-alias g='git'
