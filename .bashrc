@@ -15,3 +15,13 @@ alias g='git'
 
 # SSH Agent Info
 [ -f "$HOME/.agent.rc" ] && . "$HOME/.agent.rc" &>/dev/null
+
+ssh-agent() {
+    if [ -z "$@" ] ; then
+        /usr/bin/ssh-agent > .agent.rc
+        . ~/.agent.rc
+    else
+        /usr/bin/ssh-agent "$@"
+    fi
+}
+
