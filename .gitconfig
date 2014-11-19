@@ -1,8 +1,9 @@
 [user]
 	email = zealjagannatha@gmail.com
     name = Zeal Jagannatha
+[push]
+    default = simple
 [alias]
     d = diff
     ci = commit
-[push]
-	default = simple
+    co = checkout
