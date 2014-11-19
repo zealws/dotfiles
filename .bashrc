@@ -10,7 +10,6 @@ PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \\$\[\033[00m\] "
 alias dir="dir --color=auto"
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
-alias lkj='cd go/src/github.com/zfjagann'
 alias g='git'
 
 # SSH Agent Info
@@ -25,3 +24,13 @@ ssh-agent() {
     fi
 }
 
+# Workspace Navigation Helper
+WORKSPACE="$GOPATH/src/github.com/zfjagann"
+lkj() {
+    mkdir -p "$WORKSPACE"
+    if [ -z "$1" ] ; then
+        cd "$WORKSPACE"
+    else
+        cd "$WORKSPACE/$1"
+    fi
+}
