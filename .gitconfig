@@ -7,3 +7,6 @@
     d = diff
     ci = commit
     co = checkout
+    partial = commit -am 'PARTIAL'
+    st = status
+    s = status -s

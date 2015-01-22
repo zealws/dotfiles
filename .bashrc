@@ -1,31 +1,37 @@
 export GOPATH="$HOME/go"
 export EDITOR=vim
 
-PATH="$GOPATH/bin:$PATH"
+PATH="$PATH:$GOPATH/bin:$HOME/bin"
+
+[[ -f "$HOME/.bashrc.custom" ]] && source "$HOME/.bashrc.custom"
 
 # Color Prompt
-PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \\$\[\033[00m\] "
+spwd_bin=$(which spwd 2&>/dev/null)
+if [ -z "$spwd_bin" ] ; then
+    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \\$\[\033[00m\] '
+else
+    PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \$($spwd_bin) \\$\[\033[00m\] "
+fi
 
 # Aliases
 alias dir="dir --color=auto"
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 alias g='git'
+alias v='vagrant'
 
 # SSH Agent Info
 [ -f "$HOME/.agent.rc" ] && . "$HOME/.agent.rc" &>/dev/null
 
-ssh-agent() {
-    if [ -z "$@" ] ; then
-        /usr/bin/ssh-agent > .agent.rc
-        . ~/.agent.rc
-    else
-        /usr/bin/ssh-agent "$@"
-    fi
-}
+SSH_AGENT_PID=$(ps aux | grep ssh-agent | grep -v grep | awk '{print $2}')
+if [ -n "$SSH_AGENT_PID" ] ; then
+    TPID=$(grep PPid /proc/$SSH_AGENT_PID/status | awk '{print $2}')
+    SSH_AUTH_SOCK=$(ls /tmp/ssh*/agent.$TPID)
+    export SSH_AGENT_PID
+    export SSH_AUTH_SOCK
+fi
 
 # Workspace Navigation Helper
-WORKSPACE="$GOPATH/src/github.com/zfjagann"
 lkj() {
     mkdir -p "$WORKSPACE"
     if [ -z "$1" ] ; then
