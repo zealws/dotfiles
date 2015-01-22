@@ -6,7 +6,7 @@ PATH="$PATH:$GOPATH/bin:$HOME/bin"
 [[ -f "$HOME/.bashrc.custom" ]] && source "$HOME/.bashrc.custom"
 
 # Color Prompt
-spwd_bin=$(which spwd 2&>/dev/null)
+spwd_bin=$(which spwd 2>/dev/null)
 if [ -z "$spwd_bin" ] ; then
     PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \\$\[\033[00m\] '
 else
