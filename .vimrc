@@ -6,6 +6,7 @@ filetype plugin indent on
 " for https://github.com/fatih/vim-go
 au FileType go nmap <leader>f :GoFmt
 au FileType go nmap <leader>b <Plug>(go-test)
+au FileType go nmap <leader>r <Plug>(go-run)
 
 set tabstop=4
 set expandtab
