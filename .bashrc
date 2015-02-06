@@ -23,13 +23,15 @@ alias v='vagrant'
 # SSH Agent Info
 [ -f "$HOME/.agent.rc" ] && . "$HOME/.agent.rc" &>/dev/null
 
-SSH_AGENT_PID=$(ps aux | grep ssh-agent | grep -v grep | awk '{print $2}')
-if [ -n "$SSH_AGENT_PID" ] ; then
-    TPID=$(grep PPid /proc/$SSH_AGENT_PID/status | awk '{print $2}')
-    SSH_AUTH_SOCK=$(ls /tmp/ssh*/agent.$TPID)
-    export SSH_AGENT_PID
-    export SSH_AUTH_SOCK
-fi
+setup-ssh-agent() {
+    SSH_AGENT_PID=$(ps aux | grep ssh-agent | grep -v grep | awk '{print $2}')
+    if [ -n "$SSH_AGENT_PID" ] ; then
+        SSH_AUTH_SOCK=$(ls /tmp/ssh*/agent.*)
+        export SSH_AGENT_PID
+        export SSH_AUTH_SOCK
+        echo "Connected to SSH agent($SSH_AGENT_PID) on $SSH_AUTH_SOCK"
+    fi
+}
 
 # Workspace Navigation Helper
 lkj() {
@@ -40,3 +42,5 @@ lkj() {
         cd "$WORKSPACE/$1"
     fi
 }
+
+setup-ssh-agent &>/dev/null
