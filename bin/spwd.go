@@ -7,7 +7,7 @@ import (
     "strings"
 )
 
-const MAX_LENGTH = 35
+const MAX_LENGTH = 45
 
 func fullSplit(p string) []string {
     dir, file := path.Split(p)

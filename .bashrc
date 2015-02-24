@@ -35,12 +35,8 @@ setup-ssh-agent() {
 
 # Workspace Navigation Helper
 lkj() {
-    mkdir -p "$WORKSPACE"
-    if [ -z "$1" ] ; then
-        cd "$WORKSPACE"
-    else
-        cd "$WORKSPACE/$1"
-    fi
+    cd "$(git rev-parse --show-toplevel)"
+    [ -n "$1" ] && cd "$1"
 }
 
 setup-ssh-agent &>/dev/null
