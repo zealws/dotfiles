@@ -42,9 +42,9 @@ lkj() {
 setup-ssh-agent &>/dev/null
 
 save-term-profiles() {
-    dconf dump /org/gnome/terminal/legacy/profiles:/ > .gnome-term-profiles
+    dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/.gnome-term-profiles
 }
 
 load-term-profiles() {
-    dconf load /org/gnome/terminal/legacy/profiles:/ < .gnome-term-profiles
+    dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.gnome-term-profiles
 }

@@ -1,11 +1,19 @@
 [/]
-list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '286e038c-dff9-4d94-b1a9-dca6084f7d41', 'f87194d8-140c-43d5-9889-ee4233c0e9e4']
-default='f87194d8-140c-43d5-9889-ee4233c0e9e4'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '286e038c-dff9-4d94-b1a9-dca6084f7d41', 'f87194d8-140c-43d5-9889-ee4233c0e9e4', '38e84d3a-d70c-4484-9a50-63fc5a1cd3b6']
+default='38e84d3a-d70c-4484-9a50-63fc5a1cd3b6'
+
+[:38e84d3a-d70c-4484-9a50-63fc5a1cd3b6]
+background-color='rgb(253,246,227)'
+use-theme-colors=false
+cursor-shape='ibeam'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(253,246,227)']
+foreground-color='rgb(101,123,131)'
+visible-name='Solar Light'
 
 [:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 background-color='rgb(255,255,255)'
 use-theme-colors=false
-cursor-shape='underline'
+cursor-shape='ibeam'
 foreground-color='rgb(0,0,0)'
 visible-name='Light'
 
