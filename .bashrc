@@ -19,6 +19,7 @@ alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 alias g='git'
 alias v='vagrant'
+alias subl="subl3"
 
 # SSH Agent Info
 [ -f "$HOME/.agent.rc" ] && . "$HOME/.agent.rc" &>/dev/null
