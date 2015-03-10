@@ -10,3 +10,6 @@
     partial = commit -am 'PARTIAL'
     st = status
     s = status -s
+    up =  pull --ff-only
+    pr = pull --rebase
+    sl = log --pretty=format:\"%Cblue%h%d%Creset %ar %Cgreen%an%Creset %s\" --graph
