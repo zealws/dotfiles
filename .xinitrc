@@ -1,6 +1,8 @@
-xmodmap ~/.xmodmap.rc
-syndaemon -i 0.8 -k -d
-#xcape -e 'Control_L=Escape'
+#!/usr/bin/env bash
+#
+xmodmap ~/.xmodmap.rc || exit 1
+syndaemon -i 0.8 -k -d || exit 2
+#xcape -e 'Control_L=Escape' || exit 3
 
 exec cinnamon-session
 
