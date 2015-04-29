@@ -1,3 +1,5 @@
+let $PYTHONPATH='/usr/lib/python3.4/site-packages'
+
 execute pathogen#infect()
 
 syntax on
