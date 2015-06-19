@@ -3,6 +3,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+[ -z "$TMPDIR" ] && export TMPDIR=/tmp
+
 export PATH="$PATH:$HOME/bin"
 
 alias vim='vim -p'
