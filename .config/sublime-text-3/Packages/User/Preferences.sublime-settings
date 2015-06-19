@@ -13,5 +13,7 @@
 	"smart_indent": false,
 	"tab_completion": false,
 	"tab_size": 4,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"tab_completion": false,
+	"update_check": false
 }
