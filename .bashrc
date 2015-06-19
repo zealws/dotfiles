@@ -22,6 +22,7 @@ alias v='vagrant'
 alias subl="subl3"
 alias jurl="curl --silent -H 'Content-Type: application/json'"
 alias ssh-agent='ssh-agent && setup-ssh-agent'
+alias yao='yaourt'
 
 # SSH Agent Info
 [ -f "$HOME/.agent.rc" ] && . "$HOME/.agent.rc" &>/dev/null

@@ -13,3 +13,4 @@
     ff =  pull --ff-only
     up = pull --rebase
     sl = log --pretty=format:\"%Cblue%h%d%Creset %ar %Cgreen%an%Creset %s\" --graph
+    id = rev-list -n1 HEAD
