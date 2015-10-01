@@ -3,7 +3,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-[ -z "$TMPDIR" ] && export TMPDIR=/tmp
+[[ -z "$TMPDIR" ]] && export TMPDIR=/tmp
+[[ -f "$HOME/.zshrc.custom" ]] && source "$HOME/.zshrc.custom"
 
 export PATH="$PATH:$HOME/bin"
 
@@ -19,6 +20,8 @@ export EDITOR=vim
 export VISUAL=vim
 
 export GOPATH="$HOME/go"
+export GOROOT="/usr/lib/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # SSH Agent
 setup-ssh-agent() {

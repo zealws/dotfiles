@@ -10,7 +10,9 @@
     partial = commit -am 'PARTIAL'
     st = status
     s = status -s
-    ff =  pull --ff-only
+    ff =  merge --ff-only
     up = pull --rebase
     sl = log --pretty=format:\"%Cblue%h%d%Creset %ar %Cgreen%an%Creset %s\" --graph
     id = rev-list -n1 HEAD
+[core]
+    excludesfile = ~/.gitignore_global

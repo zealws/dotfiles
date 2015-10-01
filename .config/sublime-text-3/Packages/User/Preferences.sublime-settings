@@ -1,7 +1,7 @@
 {
 	"auto_complete": false,
 	"color_scheme": "Packages/Colors/Hyrule.tmTheme",
-	"font_size": 11,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -14,6 +14,5 @@
 	"tab_completion": false,
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
-	"tab_completion": false,
 	"update_check": false
 }
