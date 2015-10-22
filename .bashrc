@@ -30,10 +30,19 @@ alias yao='yaourt'
 setup-ssh-agent() {
     SSH_AGENT_PID=$(ps aux | grep ssh-agent | grep -v grep | awk '{print $2}')
     if [ -n "$SSH_AGENT_PID" ] ; then
-        SSH_AUTH_SOCK=$(ls /tmp/ssh*/agent.*)
+        SSH_AUTH_SOCK=$(ls $TMPDIR/ssh*/agent.*)
         export SSH_AGENT_PID
         export SSH_AUTH_SOCK
         echo "Connected to SSH agent($SSH_AGENT_PID) on $SSH_AUTH_SOCK"
+    fi
+    if [ "$1" != "-n" ] ; then
+        for x in $HOME/.ssh/id_{ecdsa,rsa} ; do
+            if ssh-add -l | awk '{print $3}' | grep "$x" &>/dev/null ; then
+                echo "Key already added: $x"
+            else
+                ssh-add "$x"
+            fi
+        done
     fi
 }
 
@@ -43,7 +52,7 @@ lkj() {
     [ -n "$1" ] && cd "$1"
 }
 
-setup-ssh-agent &>/dev/null
+setup-ssh-agent -n &>/dev/null
 
 save-term-profiles() {
     dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/.gnome-term-profiles

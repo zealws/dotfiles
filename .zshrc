@@ -32,6 +32,15 @@ setup-ssh-agent() {
         export SSH_AUTH_SOCK
         echo "Connected to SSH agent($SSH_AGENT_PID) on $SSH_AUTH_SOCK"
     fi
+    if [ "$1" != "-n" ] ; then
+        for x in $HOME/.ssh/id_{ecdsa,rsa} ; do
+            if ssh-add -l | awk '{print $3}' | grep "$x" &>/dev/null ; then
+                echo "Key already added: $x"
+            else
+                ssh-add "$x"
+            fi
+        done
+    fi
 }
 
-setup-ssh-agent &>/dev/null
+setup-ssh-agent -n &>/dev/null
